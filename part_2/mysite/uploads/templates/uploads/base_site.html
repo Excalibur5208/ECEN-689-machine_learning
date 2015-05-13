@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<head>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'uploads/style.css' %}" />
+<title>Classify cats and dogs!</title>
+</head>
+<body>
+<div id="templatemo_container">
+<div id="templatemo_top_panel">
+    	<div id="templatemo_language_section">
+			<a href="#" id="templatemo_flag_01"><img src="http://127.0.0.1:8000/media/uploads_images/templatemo_flag_01.gif" alt="flag 1" height="50" width="70" /></a>
+            <a href="#" id="templatemo_flag_02"><img src="http://127.0.0.1:8000/media/uploads_images/templatemo_flag_02.gif" alt="flag 2" height="50" width="70" /></a>
+            <a href="#" id="templatemo_flag_03"><img src="http://127.0.0.1:8000/media/uploads_images/templatemo_flag_03.gif" alt="flag 3" height="50" width="70" /></a>
+            <a href="#" id="templatemo_flag_04"><img src="http://127.0.0.1:8000/media/uploads_images/templatemo_flag_04.gif" alt="flag 4" height="50" width="70" /></a>
+            <a href="#" id="templatemo_flag_05"><img src="http://127.0.0.1:8000/media/uploads_images/templatemo_flag_05.gif" alt="flag 5" height="50" width="70" /></a>
+		</div>
+        <div id="Username">
+       	    <!--Username <span>(<a href="#">Kallen</a>)</span>   -->   
+        </div>
+  </div>
+     
+     <div id="templatemo_header">
+     	<img src="http://127.0.0.1:8000/media/uploads_images/templatemo_site_header.jpg" alt="Flower Shop" />
+     </div>
+     
+     <div id="templatemo_banner">
+     	<a href="#"><img src="http://127.0.0.1:8000/media/uploads_images/templatemo_banner_image.jpg" height="230" alt="Flower Shop - Free Web Template" title="Flower Shop - Free Web Template" border="0" /></a>     </div>
+     
+<div id="templatemo_menu_panel">
+        <ul>
+            <li><a href="{% url 'uploads:index' %}" class="current">Home</a></li>
+            <li><a href="{% url 'uploads:repository' %}" target="_parent">Repository</a></li>
+            <li><a href="{% url 'uploads:cats' %}" target="_parent">Cats</a></li>
+            <li><a href="{% url 'uploads:dogs' %}" target="_parent">Dogs</a></li>  
+            <li><a href="#">About Us</a></li> 
+            <li><a href="#">Contact Us</a></li>                     
+        </ul> 
+    </div> <!-- end of menu -->
+    
+    <div id="templatemo_content">
+    
+    	<div id="templatemo_content_left">
+		{% block branding %}
+        	<h1>Welcome to Our Cats and Dogs Classify Site</h1>
+            <p>This is an <a href="http://www.templatemo.com" target="_parent">automatic classification app</a> provided by Xiaoshu Zhang and Huilin He. You may upload, delete and classify figures of cats and dogs for your personal or business uses.</p>
+            <p>Esta es una aplicacion de clasificacion automatica proporcionado por Xiaoshu Zhang y Huilin He. Usted puede cargar, borrar y clasificar figuras de gatos y perros para sus usos personales o de negocios.</p>
+		{% endblock %}
+             <div class="cleaner_with_height">&nbsp;</div>
+             
+             <h2>Album</h2>
+             <div class="product_box">
+             	<h3>Repository</h3>
+                <a href="{% url 'uploads:repository' %}"><img src="http://127.0.0.1:8000/media/uploads_images/templatemo_image_01.jpg" alt="image" height="170" width="200" /></a>
+                <p>Repositorio</p>
+                <div class="price">Figure #:<span>{{ upload_list_No }}</span></div>                           
+             	<div class="buynow"><a href="{% url 'uploads:repository' %}">Details</a></div>
+			 </div>
+             <div class="product_box">
+             	<h3>Cats</h3>
+                <a href="{% url 'uploads:cats' %}"><img src="http://127.0.0.1:8000/media/uploads_images/templatemo_image_02.jpg" alt="image" height="170" width="200" /></a>
+                <p>Gatos</p>
+                <div class="price">Figure #:<span>{{ upload_list_0_No }}</span></div>                           
+             	<div class="buynow"><a href="{% url 'uploads:cats' %}">Details</a></div>
+             </div>
+             <div class="product_box">
+             	<h3>Dogs</h3>
+                <a href="{% url 'uploads:dogs' %}"><img src="http://127.0.0.1:8000/media/uploads_images/templatemo_image_03.jpg" alt="image" height="170" width="200" /></a>
+                <p>Perros</p>
+                <div class="price">Figure #:<span>{{ upload_list_1_No }}</span></div>                           
+             	<div class="buynow"><a href="{% url 'uploads:dogs' %}">Details</a></div>
+             </div>
+             
+			<div class="cleaner_with_height">&nbsp;</div>
+        </div> <!-- end of ocntent left -->
+        
+        <div id="templatemo_content_right">
+        	<div class="templatemo_right_section">
+				<h4>Operations</h4>
+            	<div class="templatemo_right_section_content">
+					<div class="icons">
+						<img src="http://127.0.0.1:8000/media/uploads_images/upload_icon.gif" height="60" width="60" />
+						<a href="{% url 'uploads:upload_page' %}" title="Go to upload page." >Upload</a>
+					</div>
+				</div>
+				<div class="templatemo_right_section_content">
+					<div class="icons">
+						<img src="http://127.0.0.1:8000/media/uploads_images/classify_icon.gif" height="50" width="35" />
+						<a title="Classify the figures in repository." href="{% url 'uploads:classfy' %}">Classify</a>
+					</div>
+				</div>
+			</div>
+            
+            <div class="templatemo_right_section">
+            	<h4>Categories</h4>
+                <div class="templatemo_right_section_content">
+                    <ul>
+                        <li><a href="{% url 'uploads:repository' %}">Repository</a></li>
+                        <li><a href="{% url 'uploads:cats' %}">Cats</a></li>
+                        <li><a href="{% url 'uploads:dogs' %}">Dogs</a></li>
+                        <li><a href="{% url 'uploads:upload_page' %}" title="Go to upload page." >Upload</a></li>
+                        <li><a title="Classify the figures in repository." href="{% url 'uploads:classfy' %}">Classify</a></li>
+                        <li><a href={% url 'uploads:index' %}>Home</a></li>
+                        <li><a href="#">Forum</a></li>
+                        <li><a href="#">WebSite</a></li>
+                        <li><a href="#">Place</a></li>
+                        <li><a href="#">Hall</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="templatemo_right_section">
+            	<h4>Pets.org Validations</h4>
+            	<div class="templatemo_right_section_content">
+                    <a href="#"><img style="border:0;width:88px;height:31px" src="http://127.0.0.1:8000/media/uploads_images/Validated-stamp.jpg" alt="Valid XHTML 1.0 Transitional" width="88" height="31" vspace="8" border="0" /></a>
+					<a href="#"><img style="border:0;width:88px;height:31px"  src="http://127.0.0.1:8000/media/uploads_images/Validated-stamp_2.jpg" alt="Valid CSS!" vspace="8" border="0" /></a>
+				</div>
+            </div>
+        </div> <!-- end of content right-->
+        
+        <div class="cleaner">&nbsp;</div>
+    </div>
+    
+     <div id="templatemo_footer_panel">
+        <div id="footer_left">
+            <img src="http://127.0.0.1:8000/media/uploads_images/mastercard.gif" alt="Master Card" height="50" width="50" /><img src="http://127.0.0.1:8000/media/uploads_images/visa.gif" alt="Visa Card" height="50" width="50" /><img src="http://127.0.0.1:8000/media/uploads_images/paypal.gif" alt="PayPal" height="50" width="50" /><img src="http://127.0.0.1:8000/media/uploads_images/verisignsecured.gif" alt="Verisign Secured" height="50" width="50" />
+        </div>
+        <div id="footer_right">
+            Copyright ? 2024 <a href="#">Z&ampH</a><br />
+			<a href="http://www.iwebsitetemplate.com" target="_parent">Automatic Classification</a> by 
+            <a href="http://www.templatemo.com" target="_blank">Xiaoshu Zhang &amp Huilin He</a>
+        </div>
+        
+        <div class="cleaner">&nbsp;</div>
+    </div>
+</div>
+
+</html>

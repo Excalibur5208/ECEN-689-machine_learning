@@ -1,0 +1,10 @@
+{{ value|default:"nothing" }}
+{{ value|length }}
+{% autoescape off %}
+    {{ value|lower }}
+{% endautoescape %}
+
+{{ value|filesizeformat }}
+Hello, {{ value|safe }}
+
+{{task.foo}}

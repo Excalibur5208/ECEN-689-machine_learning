@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<head>
+{% extends "uploads/base_site.html" %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'uploads/style.css' %}" />
+<title>Classify cats and dogs!</title>
+</head>
+<body>
+{% block branding %}
+<form action="{% url 'uploads:upload_action' %}" method="post" enctype="multipart/form-data">
+<fieldset>
+	<legend>upload_page</legend>
+	{% csrf_token %}
+	<input type="text" name="title0"/>
+	<input type="file" name="file0"/><br />
+	{% for index in range %}
+		<input type="text" name="title{{ index }}"/>
+		<input type="file" name="file{{ index }}"/><br />
+	{% endfor %}
+	<input type="submit" value="submit" />
+</fieldset>
+</form>
+{% endblock %}
+</body>
+</html>

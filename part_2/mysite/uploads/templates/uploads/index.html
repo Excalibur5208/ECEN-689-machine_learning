@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+{% extends "uploads/base_site.html" %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'uploads/style.css' %}" />
+<title>Classify cats and dogs!</title>
+</head>
+<body>
+{% block branding %}
+	<h1>Welcome to Our Cats and Dogs Classify Site</h1>
+	<p>This is an <a href="http://www.templatemo.com" target="_parent">automatic classification app</a> provided by Xiaoshu Zhang and Huilin He. You may upload, delete and classify figures of cats and dogs for your personal or business uses.</p>
+	<p>Esta es una aplicacion de clasificacion automatica proporcionado por Xiaoshu Zhang y Huilin He. Usted puede cargar, borrar y clasificar figuras de gatos y perros para sus usos personales o de negocios.</p>
+{% endblock %}
+</body>
+</html>

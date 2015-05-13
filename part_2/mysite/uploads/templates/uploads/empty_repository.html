@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+{% extends "uploads/base_site.html" %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'uploads/style.css' %}" />
+<title>Classify cats and dogs!</title>
+</head>
+<body>
+{% block branding %}
+<h1>Empty Repository</h1>
+<p>{{ str }}</p>
+<div class="buynow"><a href="{% url 'uploads:upload_page' %}" title="Go to upload page." >Upload</a></div> 
+{% endblock %}
+</P>
+</body>
+</html>

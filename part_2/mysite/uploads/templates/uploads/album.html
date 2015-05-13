@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+{% extends "uploads/base_site.html" %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'uploads/style.css' %}" />
+<title>Classify cats and dogs!</title>
+</head>
+<body>
+{% block branding %}
+<h1>{{ album_name }}</h1>
+{% if upload_list %}
+	{% for q in upload_list %}
+	<div class="img_each_album">
+		<a target="_blank" href="{{ q.file.url }}"><img src="{{ q.file.url }}" height="100" width="100"></img></a>
+		<div class="desc">{{ q.title }}</div>
+	</div>
+	{% endfor %}
+{% else %}
+	<p>No {{ album_name }} are available.</p>
+{% endif %}
+
+
+  
+{% endblock %}
+</P>
+</body>
+</html>
